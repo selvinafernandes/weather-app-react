@@ -1,0 +1,97 @@
+.weather-tile {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: 350px;
+    background-color: $white;
+    color: #444;
+    font-size: px-rem(40);
+    height: 100vh;
+    @include breakpoint(medium){
+        grid-template-columns: repeat(1,1fr);
+    }
+    @include breakpoint(large){
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(auto-fill,minmax(400px, 1fr));
+        font-size: px-rem(20);
+    }
+
+    &__current {
+        border-radius: 5px;
+        height: 100vh;
+    }
+    &__main {
+        background:
+        linear-gradient(to bottom, rgba(0, 63, 100, 0.5), rgba(0, 43, 100, 0.5)), url('../../images/ams.jpg');
+        background-size: cover;
+        color: #fff;
+        height: 85vh;
+    }
+    &__place {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding: px-rem(60) px-rem(40) px-rem(40) px-rem(40);
+    }
+    &__country {
+        display: block;
+        padding: px-rem(10);
+    }
+    &__city {
+        display: block;
+        font-weight: bold;
+    }
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+    }
+    &__temp {
+        width: 50%;
+        text-align: center;
+        font-size: px-rem(300);
+        @include breakpoint(large){
+            font-size: px-rem(150);
+        }
+    }
+    &__details {
+        list-style-type: none;
+        font-size: px-rem(64);
+        padding-left: px-rem(60);
+        @include breakpoint(large){
+            font-size: px-rem(50);
+
+        }
+    }
+    &__forecast {
+        display: flex;
+        list-style-type: none;
+        height: 15vh;
+        padding: px-rem(20);
+    }
+
+    &__forecast-day {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        justify-content: center;
+        font-weight: bold;
+        .day-title {
+            font-size: px-rem(30);
+            padding-top: px-rem(10);
+            @include breakpoint(large){
+                font-size: px-rem(15);
+            }
+        }
+        .day-icon {
+            padding-top: px-rem(10);
+        }
+        .day-temp {
+            font-size: px-rem(35);
+            padding-top: px-rem(20);
+        }
+    }
+}

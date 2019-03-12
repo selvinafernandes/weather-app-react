@@ -11,23 +11,16 @@
 @import 'modules/sections';
 
 //Partials
-@import 'partials/form';
 @import 'partials/tile';
 @import 'partials/nav';
 
-
 //Import fonts
 @font-face {
-    font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?decvxq');
-    src:  url('../fonts/icomoon.eot?decvxq#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?decvxq') format('truetype'),
-      url('../fonts/icomoon.woff?decvxq') format('woff'),
-      url('../fonts/icomoon.svg?decvxq#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.eot?decvxq');
+	src: url('../fonts/icomoon.eot?decvxq#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?decvxq') format('truetype'), url('../fonts/icomoon.woff?decvxq') format('woff'),
+		url('../fonts/icomoon.svg?decvxq#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-
-
-
-

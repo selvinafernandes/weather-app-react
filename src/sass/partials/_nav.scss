@@ -1,43 +1,44 @@
-
 .weather-add {
-    position: absolute;
-    font-size: px-rem(50);
+  position: absolute;
+  font-size: px-rem(50);
+  color: $white;
+  top: px-rem(64);
+  left: px-rem(64);
+  font-weight: bold;
+  .weather-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     color: $white;
-    top: px-rem(64);
-    left: px-rem(64);
-    font-weight: bold;
-    .weather-form {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        color: $white;
-        background:
-        linear-gradient(to bottom, rgba(0, 63, 100,1), rgba(0, 43, 100,1));
-        background-size: cover;
-        .form-element {
-            padding: px-rem(36);
-            display: flex;
-            flex-direction: column;
-            label {
-                font-size: px-rem(40);
-                padding-bottom: px-rem(10);
-            }
-        }
-        .form-control {
-            border: 1px solid $black;
-            width: 100%;
-            color: $black;
-            padding: px-rem(40);
-            border-radius: px-rem(20);
-        }
-
-        .icon-close {
-            position: absolute;
-            top: px-rem(32);
-            right: px-rem(32);
-        }
-
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 63, 100, 1),
+      rgba(0, 43, 100, 1)
+    );
+    background-size: cover;
+    .form-element {
+      padding: px-rem(36);
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: px-rem(40);
+        padding-bottom: px-rem(10);
+      }
     }
+    .form-control {
+      border: 1px solid $black;
+      width: 100%;
+      color: $black;
+      padding: px-rem(40);
+      border-radius: px-rem(20);
+    }
+
+    .icon-close {
+      position: absolute;
+      top: px-rem(32);
+      right: px-rem(32);
+    }
+  }
 }

@@ -1,106 +1,90 @@
 @mixin flexbox() {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+  -moz-box-ordinal-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+@mixin flexdir($dir, $justify) {
+  flex-direction: $dir;
+  justify-content: $justify;
+}
+
+@mixin breakpoint($class) {
+  @if $class == small {
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $class == medium {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == large {
+    @media (min-width: 1200px) {
+      @content;
+    }
   }
+}
 
-
-  @mixin order($val) {
-    -webkit-box-ordinal-group: $val;
-    -moz-box-ordinal-group: $val;
-    -ms-flex-order: $val;
-    -webkit-order: $val;
-    order: $val;
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
   }
+}
 
-  @mixin flexdir($dir,$justify){
-      flex-direction:$dir;
-      justify-content:$justify;
+@mixin font($val, $font) {
+  font-size: $val;
+  font-family: $font;
+}
+
+@mixin fontsize($val) {
+  font-size: $val;
+}
+
+@mixin menu($color) {
+  text-decoration: none;
+  position: relative;
+  &:hover {
+    color: $color;
   }
-
-  @mixin breakpoint($class){
-      @if $class == small {
-          @media(min-width:320px){
-              @content;
-              }
-      }
-      @else if $class == medium {
-          @media(min-width:768px){
-              @content;
-          }
-      }
-      @else if $class == large {
-          @media(min-width:1200px){
-              @content;
-          }
-      }
+  &:after {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 18px;
+    right: 0;
+    margin: 0 auto;
+    background-color: $color;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
   }
-
-  @mixin mq($width, $type: max) {
-      @if map_has_key($breakpoints, $width) {
-          $width: map_get($breakpoints, $width);
-          @if $type == max {
-              $width: $width - 1px;
-          }
-          @media only screen and (#{$type}-width: $width) {
-              @content;
-          }
-      }
+  &:hover:after {
+    visibility: visible;
+    transform: scaleX(1);
   }
+}
 
-  @mixin font($val,$font){
+@mixin transform($xaxis, $yaxis) {
+  transform: skew($xaxis, $yaxis);
+}
 
-      font-size: $val;
-      font-family : $font;
-  }
-
-  @mixin fontsize($val){
-      font-size : $val;
-  }
-
-  @mixin menu($color){
-      text-decoration: none;
-      position: relative;
-      &:hover {
-          color: $color;
-      }
-      &:after {
-          content: " ";
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          top: 18px;
-          right: 0;
-          margin: 0 auto;
-          background-color: $color;
-          visibility: hidden;
-          transform: scaleX(0);
-          transition: all 0.3s ease-in-out 0s;
-      }
-      &:hover:after {
-          visibility: visible;
-            transform: scaleX(1);
-      }
-  }
-
-  @mixin transform($xaxis,$yaxis){
-    transform:skew($xaxis,$yaxis);
-  }
-
-  @function px-rem($fontsize){
-      @return ($fontsize/16)+rem ;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
+@function px-rem($fontsize) {
+  @return ($fontsize/16) + rem;
+}

@@ -361,7 +361,8 @@ th {
   padding: 0;
   margin: 0; }
 
-body, html {
+body,
+html {
   font-family: "Montserrat", sans-serif;
   height: 100%; }
 

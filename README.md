@@ -2,7 +2,7 @@
 
 A minimal example of using React frontend for getting current weather & forecast as per city
 
-#Run the React APP
+# Run the React APP
 
 ```bash
 # Clone the project

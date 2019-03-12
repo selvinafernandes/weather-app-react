@@ -1,9 +1,9 @@
-const gulp = require('gulp');
-const runSequence = require('run-sequence');
-const requireDir = require('require-dir');
+const gulp = require("gulp");
+const runSequence = require("run-sequence");
+const requireDir = require("require-dir");
 
-gulp.task('default',function() {
-    runSequence(['sass','watch']);
-})
+gulp.task("default", function() {
+	runSequence(["sass", "watch"]);
+});
 
-requireDir('gulp/tasks');
+requireDir("gulp/tasks");
